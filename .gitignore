@@ -6,4 +6,3 @@ __pycache__/
 dist/
 build/
 .DS_Store
-sample_results.json
