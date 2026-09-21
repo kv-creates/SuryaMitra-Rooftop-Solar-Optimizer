@@ -1,6 +1,6 @@
 # SuryaMitra Rooftop Solar Optimizer
 **Rooftop PV yield optimizer**: irradiance, shading, temperature derate, tilt search, LCOE and payback. Fully reproducible with synthetic weather, no API keys.
-![License](https://img.shields.io/badge/license-MIT-green) ![Python](https://img.shields.io/badge/python-3.11-blue) ![Tests](https://img.shields.io/badge/tests-30-plus-brightgreen) ![Version](https://img.shields.io/badge/version-0.1.0-orange) ![Solar](https://img.shields.io/badge/solar-rooftop-yellow)
+![License](https://img.shields.io/badge/license-MIT-green) ![Python](https://img.shields.io/badge/python-3.11-blue) ![Tests](https://img.shields.io/badge/tests-30-brightgreen) ![Version](https://img.shields.io/badge/version-0.1.0-orange) ![Solar](https://img.shields.io/badge/solar-rooftop-yellow)
 ![Hero GHI](docs/images/hero-ghi.png)
 *Figure 1: Synthetic Mumbai day-105 GHI from `src/forecast.py` over clear-sky `src/irradiance.py`. Dark background intentional for readability.*
 ## What this solves
@@ -18,10 +18,10 @@ graph TD
 ## Results
 ### Tilt sweep
 ![Tilt](docs/images/tilt-sweep.png)
-*Figure 2: Daily kWh vs tilt for 40 m2 Mumbai rooftop. Best tilt 15-20 deg from `src/optimizer.py:optimize_tilt`.*
+*Figure 2: Daily kWh vs tilt for 40 m2 Mumbai rooftop. Grid-search best tilt from `src/optimizer.py:optimize_tilt`.*
 ### Monthly yield
 ![Monthly](docs/images/monthly-yield.png)
-*Figure 3: Monthly kWh at optimized tilt. Annual 9-11 MWh from `src/optimizer.py:annual_yield_kwh`.*
+*Figure 3: Monthly kWh at optimized tilt. Annual ~14.7 MWh (40 m2, Mumbai) from `src/optimizer.py:annual_yield_kwh`.*
 ### Shading
 ![Shading](docs/images/shading-heatmap.png)
 *Figure 4: Combined shading factor vs tilt and horizon. Model in `src/shading.py:combined_factor`.*
@@ -66,10 +66,10 @@ Outputs `docs/images/*.png`, already committed, shown above.
 ## Performance
 | Metric | Value |
 |---|---|
-| Mumbai 40 m2 daily day-105 | ~30 kWh |
-| Annual optimized | ~10000 kWh |
+| Mumbai 40 m2 daily day-105 | ~40 kWh (best tilt) |
+| Annual optimized | ~14692 kWh |
 | LCOE | INR 3-5 per kWh |
 | Payback at INR 8 tariff | 2-4 yrs |
-| Tests | 30+ passed |
+| Tests | 30 passed |
 ## License
 MIT - kv-creates 2026
