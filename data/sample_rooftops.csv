@@ -1,0 +1,6 @@
+id,lat_deg,lon_deg,area_m2,tilt_deg,azim_deg,notes
+MUM-AND-01,19.12,72.86,40,15,180,apartment block
+MUM-BAN-02,19.05,72.82,65,10,170,warehouse
+PUN-KOT-03,18.52,73.86,30,20,180,villa
+DEL-DWA-04,28.59,77.04,50,25,185,school
+BLR-WHI-05,12.97,77.59,35,12,175,office
