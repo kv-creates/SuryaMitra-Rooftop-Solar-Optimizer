@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "suryamitra-rooftop-solar-optimizer"
+version = "0.1.0"
+description = "Rooftop solar yield optimizer: irradiance, shading, PV, tilt optimization, finance"
+requires-python = ">=3.11"
+license = "MIT"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
