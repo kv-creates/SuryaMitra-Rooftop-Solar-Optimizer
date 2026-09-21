@@ -1,4 +1,7 @@
-"""PV power model with temperature derating and tilt gain."""
+"""PV power model with temperature derating and tilt gain.
+
+Hardened: night/zero-area return 0.0, eff validated, derate clamped 0.5..1.05.
+"""
 from __future__ import annotations
 import math
 from .irradiance import ghi_clear_sky

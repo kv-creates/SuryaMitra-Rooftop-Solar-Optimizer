@@ -1,4 +1,7 @@
-"""FastAPI surface with strict validation (no crashes on bad input)."""
+"""FastAPI surface with strict validation (no crashes on bad input).
+
+Hardened: /ghi returns error object on out-of-range, pydantic bounds all POST bodies.
+"""
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from .irradiance import ghi_clear_sky, daily_ghi
