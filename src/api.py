@@ -41,6 +41,13 @@ def yld(b: YieldReq):
         "daily_ghi_whm2": daily_ghi(b.lat_deg, b.day),
     }
 
+class BatchReq(BaseModel):
+    sites: list[YieldReq]
+
+@app.post("/batch_yield")
+def batch(b: BatchReq):
+    return {"results": [{"daily_kwh": daily_yield_kwh(s.lat_deg, s.day, s.area_m2, s.eff, s.tilt_deg, s.ambient_c)} for s in b.sites]}
+
 @app.post("/optimize")
 def opt(b: OptimizeReq):
     o = optimize_tilt(b.lat_deg, b.day, b.area_m2)
