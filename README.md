@@ -38,7 +38,7 @@ src/pv.py          cell temp, DC power, daily yield
 src/optimizer.py   tilt grid search, annual yield
 src/finance.py     capex, LCOE, payback, NPV
 src/forecast.py    synthetic TMY
-src/api.py         FastAPI /health /ghi /yield /optimize
+src/api.py         FastAPI /health /ghi /yield /optimize /batch_yield
 ```
 ## Quick start
 ```bash
