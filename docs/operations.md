@@ -4,3 +4,6 @@
 - `pytest -q` runs 30+ tests
 - `python -m src.main` runs Mumbai demo
 - Docker: `docker build -t suryamitra .` then run port 8000.
+
+Note: commits use verified author email so they count toward GitHub contributions.
+
