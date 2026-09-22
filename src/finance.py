@@ -33,3 +33,10 @@ def npv_inr(capex: float, annual_savings: float, lifetime_yrs: int = 25,
         raise ValueError("capex and annual_savings must be > 0")
     pv = sum(annual_savings / (1 + discount) ** y for y in range(1, lifetime_yrs + 1))
     return round(pv - capex, 2)
+
+
+def net_metering_credit(export_kwh: float, import_kwh: float, export_rate: float = 3.5, import_rate: float = 8.0) -> float:
+    """Net annual bill credit: import cost minus export earnings, floored at zero bill."""
+    if export_kwh < 0 or import_kwh < 0 or export_rate <= 0 or import_rate <= 0:
+        raise ValueError("kwh >= 0 and rates > 0 required")
+    return round(max(0.0, import_kwh * import_rate - export_kwh * export_rate), 2)
