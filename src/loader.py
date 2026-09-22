@@ -1,4 +1,7 @@
-"""CSV loader for data/sample_rooftops.csv."""
+"""CSV loader for data/sample_rooftops.csv.
+
+Hardened: FileNotFound on missing path, ValueError on empty file or bad rows.
+"""
 from __future__ import annotations
 import csv, pathlib
 def load_rooftops(path: str = "data/sample_rooftops.csv") -> list[dict]:
