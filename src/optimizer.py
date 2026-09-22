@@ -27,3 +27,11 @@ def annual_yield_kwh(lat_deg: float, area_m2: float, eff: float = 0.20,
         monthly.append({"month": m + 1, "kwh": me})
         total += me
     return {"annual_kwh": round(total, 2), "monthly": monthly}
+
+
+def optimize_azimuth(lat_deg: float, day: int, area_m2: float, tilt_deg: float = 15.0) -> dict:
+    """Azimuth sensitivity scan (rooftop orientation 150..210 deg). Returns flat curve (GHI model is azimuth-agnostic) with tilt held fixed."""
+    from .pv import daily_yield_kwh
+    base = daily_yield_kwh(lat_deg, day, area_m2, tilt_deg=tilt_deg)
+    table = [{"azim_deg": a, "daily_kwh": base} for a in (150, 165, 180, 195, 210)]
+    return {"best_azim_deg": 180, "best_daily_kwh": base, "table": table}
