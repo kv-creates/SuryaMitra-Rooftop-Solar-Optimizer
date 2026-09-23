@@ -38,6 +38,10 @@ src/pv.py          cell temp, DC power, daily yield
 src/optimizer.py   tilt grid search, annual yield
 src/finance.py     capex, LCOE, payback, NPV
 src/forecast.py    synthetic TMY
+src/lifetime.py    degradation + lifetime energy
+src/carbon.py      CO2 avoidance
+src/tariffs.py     state tariff profiles
+src/loader.py      rooftop CSV loader
 src/api.py         FastAPI /health /ghi /yield /optimize /batch_yield
 ```
 ## Quick start
