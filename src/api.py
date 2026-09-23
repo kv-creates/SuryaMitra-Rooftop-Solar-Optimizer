@@ -79,3 +79,15 @@ def opt(b: OptimizeReq):
 def lifetime(b: LifetimeReq):
     e = lifetime_kwh(b.annual_kwh, b.years)
     return {"lifetime_kwh": e["lifetime_kwh"], "co2_tonnes": co2_avoided_tonnes(b.annual_kwh, b.years)}
+
+
+@app.get("/savings")
+def savings(annual_kwh: float, state: str = "MH"):
+    if annual_kwh < 0:
+        return {"error": "annual_kwh must be >= 0"}
+    try:
+        t = tariff_for(state)
+    except ValueError as e:
+        return {"error": str(e)}
+    from .finance import annual_savings_inr
+    return {"state": state.upper(), "tariff": t, "annual_savings_inr": annual_savings_inr(annual_kwh, t)}
