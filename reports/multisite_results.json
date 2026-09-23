@@ -1,0 +1,27 @@
+[
+  {
+    "id": "MUM-AND-01",
+    "annual_kwh": 14607.33,
+    "savings_inr": 116858.64
+  },
+  {
+    "id": "MUM-BAN-02",
+    "annual_kwh": 23821.58,
+    "savings_inr": 190572.64
+  },
+  {
+    "id": "PUN-KOT-03",
+    "annual_kwh": 10939.2,
+    "savings_inr": 87513.6
+  },
+  {
+    "id": "DEL-DWA-04",
+    "annual_kwh": 16948.07,
+    "savings_inr": 135584.56
+  },
+  {
+    "id": "BLR-WHI-05",
+    "annual_kwh": 13174.85,
+    "savings_inr": 105398.8
+  }
+]
