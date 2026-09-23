@@ -41,6 +41,16 @@ def yld(b: YieldReq):
         "daily_ghi_whm2": daily_ghi(b.lat_deg, b.day),
     }
 
+from .lifetime import lifetime_kwh
+from .carbon import co2_avoided_tonnes
+from .tariffs import tariff_for
+
+
+class LifetimeReq(BaseModel):
+    annual_kwh: float = Field(gt=0, le=1000000)
+    years: int = Field(ge=1, le=30)
+
+
 class BatchReq(BaseModel):
     sites: list[YieldReq]
 
@@ -63,3 +73,9 @@ def opt(b: OptimizeReq):
         "lcoe_inr_per_kwh": lcoe_inr_per_kwh(capex, a["annual_kwh"]),
         "payback_years": payback_years(capex, sav),
     }
+
+
+@app.post("/lifetime")
+def lifetime(b: LifetimeReq):
+    e = lifetime_kwh(b.annual_kwh, b.years)
+    return {"lifetime_kwh": e["lifetime_kwh"], "co2_tonnes": co2_avoided_tonnes(b.annual_kwh, b.years)}
