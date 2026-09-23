@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0] - 2026-09-22
+### Added
+- Joint optimizer, lifetime/degradation, CO2, tariffs, /lifetime + /savings APIs, CSV + multisite reports
+### Fixed
+- Tariff validation v3
+
 ## [0.2.0] - 2026-09-22
 ### Added
 - Azimuth scan, net-metering credit, CSV loader, batch report + /batch_yield API
