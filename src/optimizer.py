@@ -35,3 +35,17 @@ def optimize_azimuth(lat_deg: float, day: int, area_m2: float, tilt_deg: float =
     base = daily_yield_kwh(lat_deg, day, area_m2, tilt_deg=tilt_deg)
     table = [{"azim_deg": a, "daily_kwh": base} for a in (150, 165, 180, 195, 210)]
     return {"best_azim_deg": 180, "best_daily_kwh": base, "table": table}
+
+
+def optimize_joint(lat_deg: float, day: int, area_m2: float,
+                   tilts: tuple = (0, 10, 15, 20, 30)) -> dict:
+    """Joint tilt scan reusing daily_yield_kwh; azimuth held at 180 (isotropic sky)."""
+    from .pv import daily_yield_kwh
+    best = None
+    table = []
+    for t in tilts:
+        y = daily_yield_kwh(lat_deg, day, area_m2, tilt_deg=float(t))
+        table.append({"tilt_deg": float(t), "azim_deg": 180, "daily_kwh": y})
+        if best is None or y > best["daily_kwh"]:
+            best = table[-1]
+    return {"best": best, "table": table}
