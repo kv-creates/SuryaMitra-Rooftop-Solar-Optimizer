@@ -100,3 +100,11 @@ def battery(night_kwh: float, autonomy_days: float = 1.0):
         return {"battery_kwh": bkwh(night_kwh, autonomy_days)}
     except ValueError as e:
         return {"error": str(e)}
+
+
+@app.get("/psh")
+def psh(lat_deg: float, day: int):
+    from .psh import peak_sun_hours
+    if not -90 <= lat_deg <= 90 or not 1 <= day <= 366:
+        return {"error": "lat_deg -90..90, day 1..366 required"}
+    return {"psh_hours": peak_sun_hours(lat_deg, day)}
