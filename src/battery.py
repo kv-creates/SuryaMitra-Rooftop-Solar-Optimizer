@@ -1,4 +1,7 @@
-"""Battery sizing for backup hours and night load."""
+"""Battery sizing for backup hours and night load.
+
+Hardened: rejects negative storage, non-positive load, out-of-range DoD/eff.
+"""
 from __future__ import annotations
 def battery_kwh(night_kwh: float, autonomy_days: float = 1.0, dod: float = 0.9, roundtrip: float = 0.92) -> float:
     """Usable-to-nameplate sizing with depth-of-discharge and round-trip eff."""
