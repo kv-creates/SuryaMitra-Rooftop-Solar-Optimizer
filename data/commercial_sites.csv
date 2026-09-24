@@ -1,0 +1,4 @@
+id,lat_deg,lon_deg,area_m2,tilt_deg,azim_deg,notes
+MUM-BKC-10,19.06,72.86,500,10,180,mall rooftop
+PUN-HIN-11,18.58,73.74,800,12,175,factory shed
+DEL-OKH-12,28.53,77.27,650,20,185,warehouse
