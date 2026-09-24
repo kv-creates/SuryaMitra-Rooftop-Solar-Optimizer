@@ -1,0 +1,22 @@
+[
+  {
+    "id": "MUM-BAN-02",
+    "annual_kwh": 23821.58
+  },
+  {
+    "id": "DEL-DWA-04",
+    "annual_kwh": 16948.07
+  },
+  {
+    "id": "MUM-AND-01",
+    "annual_kwh": 14607.33
+  },
+  {
+    "id": "BLR-WHI-05",
+    "annual_kwh": 13174.85
+  },
+  {
+    "id": "PUN-KOT-03",
+    "annual_kwh": 10939.2
+  }
+]
