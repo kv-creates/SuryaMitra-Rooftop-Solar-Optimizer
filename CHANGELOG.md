@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0] - 2026-09-22
+### Added
+- Sunrise/sunset, PSH, inverter, battery, monsoon, tilt tables, /battery + /psh APIs, HTML/compare/commercial reports
+### Fixed
+- Battery bounds v4
+
 ## [0.3.0] - 2026-09-22
 ### Added
 - Joint optimizer, lifetime/degradation, CO2, tariffs, /lifetime + /savings APIs, CSV + multisite reports
