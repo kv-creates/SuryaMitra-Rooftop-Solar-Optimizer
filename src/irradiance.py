@@ -41,3 +41,18 @@ def daily_ghi(lat_deg: float, day_of_year: int) -> float:
         total += ghi_clear_sky(lat_deg, day_of_year, h + 0.125) * 0.25
         h += 0.25
     return round(total, 2)
+
+
+def sunrise_sunset(lat_deg: float, day_of_year: int) -> dict:
+    """Sunrise/sunset hours (solar time) and day length. Polar day/night guarded."""
+    import math
+    lat = math.radians(lat_deg)
+    dec = solar_declination(day_of_year)
+    cos_h = -math.tan(lat) * math.tan(dec)
+    if cos_h < -1.0:
+        return {"sunrise": 0.0, "sunset": 24.0, "daylight_h": 24.0, "polar": "day"}
+    if cos_h > 1.0:
+        return {"sunrise": 12.0, "sunset": 12.0, "daylight_h": 0.0, "polar": "night"}
+    h = math.degrees(math.acos(cos_h)) / 15.0
+    return {"sunrise": round(12 - h, 2), "sunset": round(12 + h, 2),
+            "daylight_h": round(2 * h, 2), "polar": "none"}
