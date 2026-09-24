@@ -91,3 +91,12 @@ def savings(annual_kwh: float, state: str = "MH"):
         return {"error": str(e)}
     from .finance import annual_savings_inr
     return {"state": state.upper(), "tariff": t, "annual_savings_inr": annual_savings_inr(annual_kwh, t)}
+
+
+@app.get("/battery")
+def battery(night_kwh: float, autonomy_days: float = 1.0):
+    from .battery import battery_kwh as bkwh
+    try:
+        return {"battery_kwh": bkwh(night_kwh, autonomy_days)}
+    except ValueError as e:
+        return {"error": str(e)}
