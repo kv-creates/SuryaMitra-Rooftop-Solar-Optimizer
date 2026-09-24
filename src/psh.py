@@ -10,4 +10,3 @@ def annual_psh(lat_deg: float, cloud: float = 0.15) -> float:
     mids = [15, 45, 74, 105, 135, 166, 196, 227, 258, 288, 319, 349]
     dim = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     return round(sum(peak_sun_hours(lat_deg, d, cloud) * n for d, n in zip(mids, dim)), 1)
-"""
