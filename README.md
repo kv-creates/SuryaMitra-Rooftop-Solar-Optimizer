@@ -42,6 +42,11 @@ src/lifetime.py    degradation + lifetime energy
 src/carbon.py      CO2 avoidance
 src/tariffs.py     state tariff profiles
 src/loader.py      rooftop CSV loader
+src/psh.py         peak sun hours
+src/inverter.py    DC/AC sizing + clipping
+src/battery.py     storage sizing
+src/monsoon.py     month-wise cloud derate
+src/tilt_tables.py state tilt lookup
 src/api.py         FastAPI /health /ghi /yield /optimize /batch_yield
 ```
 ## Quick start
