@@ -7,3 +7,6 @@
 
 Note: commits use verified author email so they count toward GitHub contributions.
 
+
+- `python scripts/compare_sites.py` ranks rooftops; `python scripts/export_monthly_csv.py` writes monthly CSV.
+- `python scripts/summary_html.py` builds a one-page HTML summary in reports/.
