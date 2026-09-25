@@ -28,6 +28,9 @@ graph TD
 ### Finance
 ![Finance](docs/images/finance-snapshot.png)
 *Figure 5: 8 kW capex, savings, payback. Math in `src/finance.py`.*
+![Payback](docs/images/payback-chart.png)
+*Figure 7: Payback vs area with PM Surya Ghar subsidy net capex.*
+
 ![Pipeline](docs/images/pipeline.png)
 *Figure 6: Module pipeline, each block maps to one `src/` file.*
 ## Repo map
