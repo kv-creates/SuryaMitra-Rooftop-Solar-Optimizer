@@ -1,4 +1,7 @@
-"""PM Surya Ghar subsidy slabs (INR, 2026)."""
+"""PM Surya Ghar subsidy slabs (INR, 2026).
+
+Hardened: non-positive kW/capex rejected, net capex floored at zero.
+"""
 from __future__ import annotations
 def subsidy_inr(kw: float) -> float:
     if kw <= 0:
