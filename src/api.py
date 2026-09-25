@@ -108,3 +108,12 @@ def psh(lat_deg: float, day: int):
     if not -90 <= lat_deg <= 90 or not 1 <= day <= 366:
         return {"error": "lat_deg -90..90, day 1..366 required"}
     return {"psh_hours": peak_sun_hours(lat_deg, day)}
+
+
+@app.get("/subsidy")
+def subsidy(kw: float):
+    from .subsidy import subsidy_inr as sub
+    try:
+        return {"kw": kw, "subsidy_inr": sub(kw)}
+    except ValueError as e:
+        return {"error": str(e)}
