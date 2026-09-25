@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.0] - 2026-09-22
+### Added
+- Evening peak, diesel offset, subsidy slabs + /subsidy API, payback chart, O&M, quote comparator
+### Fixed
+- Subsidy bounds v5
+
 ## [0.4.0] - 2026-09-22
 ### Added
 - Sunrise/sunset, PSH, inverter, battery, monsoon, tilt tables, /battery + /psh APIs, HTML/compare/commercial reports
